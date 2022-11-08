@@ -1,0 +1,23 @@
+package ex1_xml2_ref;
+
+public class MemberDAO {
+	
+	private MemberBean member;
+//값을 넣기 위해 생성자와 setter필요
+	//constructor
+	public MemberDAO() {}
+	
+	public MemberDAO(MemberBean member) {
+		this.member = member;
+	}
+
+	//setter
+	public void setMember(MemberBean member) {
+		this.member = member;
+	}
+	
+	public void insert() {
+		member.output();
+		System.out.println("저장하였습니다");
+	}
+}

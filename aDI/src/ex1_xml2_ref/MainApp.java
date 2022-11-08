@@ -1,0 +1,32 @@
+package ex1_xml2_ref;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		//[1] 스프링 설정 파일 연결
+				ApplicationContext context = new ClassPathXmlApplicationContext("ex1_xml2_ref/applicationContext.xml");
+		
+		//[2] 빈 가져오기	
+		MemberBean bean = context.getBean("member", MemberBean.class);		
+		bean.output();		
+		
+		/* 메인함수가 호출되면 xml을 읽어 경로에 해당하는 클래스의 객체를 member라는 id로 생성한다. 
+        이 때 <property> 태그에서는 id가 member인 객체의 setter를 호출하여 각각의 값을 대입한다. 
+        getBean( ) 메소드에서 id가 member인 클래스의 객체 bean을 MemberBean 타입으로 형 변환하여 생성한다.
+        객체 bean이 output( ) 메소드를 호출할 때는 각 변수에 값이 들어있어 다음과 같은 결과가 출력된다. */
+		
+		MemberBean bean2 = context.getBean("member2", MemberBean.class);		
+		bean2.output();	
+		
+		MemberDAO dao1=context.getBean("dao", MemberDAO.class);
+		dao1.insert();
+				
+		MemberDAO dao2=context.getBean("dao2", MemberDAO.class);
+		dao2.insert();
+				
+	}
+
+}

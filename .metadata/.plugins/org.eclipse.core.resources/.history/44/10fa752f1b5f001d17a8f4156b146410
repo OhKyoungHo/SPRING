@@ -1,0 +1,31 @@
+package ex3_autowiring;
+
+import java.io.IOException;
+
+public class MessageBeanImpl implements MessageBean {
+	
+	private String name;
+	private String message;
+	
+	public void setName(String name) {
+		this.name = name;
+		
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	private OutPuter out;
+	
+	@Override
+	//부모한테 오버라이딩되었다고 보여주는 annotation
+	public void sayHello() {
+		System.out.println( name +"님께" + message );
+		try {
+			out.writeMessage(name +"님께" + message);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

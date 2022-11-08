@@ -1,0 +1,13 @@
+package ex_xml1;
+
+public class MainApp {
+//main 
+	public static void main(String[] args) {
+		//0. 기존자바방식(POJO)
+		MessageBean bean = new MessageBeanKoImpl();
+		bean.sayHello("홍길동");
+		
+
+	}
+
+}

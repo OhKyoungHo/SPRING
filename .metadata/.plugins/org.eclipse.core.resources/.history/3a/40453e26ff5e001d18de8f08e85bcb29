@@ -1,0 +1,5 @@
+package ex_xml1;
+
+public class MessageBeanKoImpl implements MessageBean{
+
+}

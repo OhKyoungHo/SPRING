@@ -1,0 +1,12 @@
+package ex3_autowiring;
+
+public class MessageBeanImpl implements MessageBean {
+
+	@Override
+	//부모한테 오버라이딩되었다고 보여주는 annotation
+	public void sayHello() {
+	
+		
+	}
+
+}

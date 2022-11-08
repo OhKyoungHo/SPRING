@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 빈 정의 -->
+<!-- 1. 기본형 멤버 값 지정 -->
+<!-- (1) 생성자함수로 지정 -->
+<!-- applicationContext.xml 에서 <bean> 안에 <constructor-arg> 태그를 사용하여 member 라는 id를 부여받은 MemberBean 객체의 생성자함수에 값을 지정 -->
+<bean id ='member' class="ex1_xml2_ref.MemberBean">
+	<constructor-arg value='홍길국' />
+	<constructor-arg value='22' />
+	<constructor-arg><value>안녕하세요</value>
+	</constructor-arg>
+</bean>
+
+<!-- 1. 기본형 멤버 값 지정 -->
+<!-- (2) setter로 지정 -->
+<!--  applicationContext.xml 의 <bean> 안에 <property> 태그를 사용하여 member2라는 id를 부여받은 MemberBean 객체의 setter 함수를 호출한다.  -->
+<bean id='member2' class="ex1_xml2_ref.MemberBean">
+<property name="name" value='홍길자'></property>
+<property name="age"><value >33</value></property>
+<property name="message" value='오늘도 화이팅'></property>
+</bean>
+
+</beans>

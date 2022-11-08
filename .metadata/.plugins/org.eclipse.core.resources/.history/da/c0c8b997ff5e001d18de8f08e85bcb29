@@ -1,0 +1,11 @@
+package ex_xml1;
+
+public class MessageBeanImp implements MessageBean {
+
+	@Override
+	public void sayHello(String name) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

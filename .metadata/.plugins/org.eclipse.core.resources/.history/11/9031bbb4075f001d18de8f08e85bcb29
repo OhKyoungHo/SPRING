@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- DI : 빈 정의 -->
+<!-- scope를 지정하여 객체 생성을 조절할 수 있다.
+        : scope는 지정하지 않을 경우 기본이 singleton으로, xml을 읽는 순간에 빈을 생성한다. 
+        : scope를 prototype으로 지정할 경우, xml을 읽는 순간에 빈을 생성하지 않고 getBean( ) 메소드가 호출될 때 객채를 생성하므로 메소드 호출 횟수만큼 객체가 여러개 만들어진다.  -->
+<bean id='ko' class ="ex1_xml1.MessageBeanKoImpl" scope='singleton'/><!-- 싱글톤으로 할때는 생성자 한번 만 호출 -->
+<bean id='en' class ="ex1_xml1.MessageBeanEnImpl" scope='prototype'/><!-- 프로토타입으로 할때마다 생성자 호출 -->
+</beans>
+<!-- applicationContext.xml -->
