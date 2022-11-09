@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+<!-- 	타겟 ( Target )	  			- 핵심기능을 담고 있는 모듈로, 타겟은 부가기능을 부여할 대상
+  		어드바이스 ( Advice )	  		- 횡단관심사를 실제로 구현해서 처리하는 부분
+  		조인포인트 ( Join Point )	 	- 횡단 관심사가 실행되는 지점
+  		포인트 컷 ( Point Cut )	  	- 어드바이스를 적용할 타겟의 메서드를 선별하는 정규표현식이다. 
+  		애스팩트 ( Aspect )	  		- AOP의 단위가 되는 횡단관심사에 해당한다. 
+  									- 애스팩트 = 어드바이스 + 포인트컷 -->
+
+<!-- 1. 타겟빈(핵심기능) 설정 -->
+<bean id='targetBean' class="aop1_xml.MessageBeanImpl"/>
+
+<!-- 2. advice빈(부가기능) 설정 -->
+<bean id='advice' class="aop1_xml.LoggingAdvice"/>
+<bean id='advice2' class="aop1_xml.SampleAdvice"/>
+
+<!-- 3. aop 환경설정 namespaces에서 aop체크-->
+<aop:config>
+	<aop:pointcut expression="execution(public * aop1_xml.*.*Hello(..))" id="pointCut"/>
+	<!-- 패키지가  aop1_xml 중에서 메소드 이름이 Hello(..)로 끝나고 안에 ..은 어떤 인자든 상관없다는 뜻 -->
+	<aop:aspect ref='advice' order='2'>
+		<aop:before method="before" pointcut-ref='pointCut'/>
+		<aop:after method="after" pointcut-ref='pointCut'/>
+	</aop:aspect>
+
+	<aop:aspect ref='advice2' order='1'>
+		<aop:around method="around" pointcut-ref ='pointCut'/>
+	</aop:aspect>	
+</aop:config>
+
+
+</beans>
+<!-- applicationContext.xml -->

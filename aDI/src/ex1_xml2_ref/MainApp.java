@@ -9,7 +9,7 @@ public class MainApp {
 		//[1] 스프링 설정 파일 연결
 				ApplicationContext context = new ClassPathXmlApplicationContext("ex1_xml2_ref/applicationContext.xml");
 		
-		//[2] 빈 가져오기	
+		//[2] 빈 가져오기	(앞에 MemberBean 써주는 대신 안에 MemberBean.class을 넣어 형변환시킨다)
 		MemberBean bean = context.getBean("member", MemberBean.class);		
 		bean.output();		
 		

@@ -2,10 +2,20 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="ex_xml1.MessageBeanKoImpl"/>
     <fullyQualifiedTypeName name="ex_xml1.MessageBeanEnImpl"/>
-    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
-    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
     <fullyQualifiedTypeName name="ex1_xml2_ref.MemberBean"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.ImportResource"/>
+    <fullyQualifiedTypeName name="board.BoardDao"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.ProceedingJoinPoint"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Aspect"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.After"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Around"/>
+    <fullyQualifiedTypeName name="org.springframework.core.annotation.Order"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 </qualifiedTypeNameHistroy>

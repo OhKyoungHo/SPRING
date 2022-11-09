@@ -6,11 +6,6 @@ public class MemberBean {
 	private int age;
 	private String message;
 	
-	//---------------------
-	public void output() {
-		System.out.println(name + "[" +age + "]" + message);
-	}
-	
 	//constructor(기본생성자)
 	public MemberBean() {
 		System.out.println("기본생성자");
@@ -44,6 +39,11 @@ public class MemberBean {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	
+	//---------------------
+		public void output() {
+			System.out.println(name + "[" +age + "]" + message);
+		}
 	
 	
 	
